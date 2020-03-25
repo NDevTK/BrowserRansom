@@ -1,3 +1,4 @@
+// Check if window has closed
 function detectClose(w) {
     var timer = setInterval(function () {
             if (w.closed) {
@@ -8,17 +9,17 @@ function detectClose(w) {
 }
 
 function defence() {
+    // Prevent Context menu
     document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-        return false
-    };
+    // Prevent shortcuts
+    document.addEventListener('keypress', event => event.preventDefault());
+    // Detect DevTools
     var done = false;
     var element = new Image();
-	
     Object.defineProperty(element, 'id', {
         get: function () {
             if (done) return
-			done = true;
+            done = true;
             trap();
         }
     });
