@@ -8,8 +8,10 @@ function detectClose(w) {
 }
 
 function defence() {
-	document.addEventListener('contextmenu', event => event.preventDefault());
-	
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function(e) {
+        return false
+    };
     var done = false;
     var element = new Image();
 	
