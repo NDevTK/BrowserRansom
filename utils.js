@@ -9,6 +9,8 @@ function detectClose(w) {
 }
 
 function defence() {
+    // Prevent console.log
+    console.log = function() {}
     // Prevent Context menu
     document.addEventListener('contextmenu', event => event.preventDefault());
     // Prevent shortcuts
