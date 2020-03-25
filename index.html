@@ -1,0 +1,49 @@
+<head>
+<title>Hijack</title>
+<link rel="preload" href="https://rickroll.ndev.tk/utils.js" as="script">
+<link rel="prerender" href="https://rickroll.ndev.tk" />
+<link rel="prerender" href="https://rickroll.ndev.tk/crash" />
+<link rel="prerender" href="https://ndev.tk/rickroll.html" />
+</head>
+
+<script type="text/javascript" src="utils.js"></script>
+<div id="init">
+<h1>Hijack!</h1>
+<p1>Attempts to crash browser if page is closed.</p1><br>
+<button onclick="custom()">Custom</button>
+<button onclick="openLock('https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0')">Rickroll</button>
+<button onclick="openLock('https://example.com/')">example.com</button>
+</div>
+<style>
+body {
+    margin: 0;
+}
+iframe {
+    display: block;
+    background: #000;
+    border: none;
+    height: 100vh;
+    width: 100vw;
+}
+</style>
+<script>
+defence();
+
+function custom() {
+	url = prompt("Please Input URL: ", "https://");
+	if(url) openLock(url);
+}
+
+function openLock(url) {
+	init.hidden = true;
+	lock = open("lock.html", 100, 100)
+	detectClose(lock);
+	iframe(url)
+}
+
+function iframe(url = "https://example.com/") {
+    var iframe = document.createElement("iframe");
+    iframe.src = url;
+    document.body.appendChild(iframe);
+}
+</script>
