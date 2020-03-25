@@ -14,6 +14,8 @@ function defence() {
     // Prevent Context menu
     document.addEventListener('contextmenu', event => event.preventDefault());
     // Prevent shortcuts
+    document.addEventListener('keydown', event => event.preventDefault());
+    // Prevent Typing
     document.addEventListener('keypress', event => event.preventDefault());
     // Detect DevTools
     var done = false;
