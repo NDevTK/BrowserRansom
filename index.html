@@ -43,6 +43,7 @@ function openLock(url) {
 
 function iframe(url = "https://example.com/") {
     var iframe = document.createElement("iframe");
+    iframe.autoplay = true;
     iframe.src = url;
     document.body.appendChild(iframe);
 }
