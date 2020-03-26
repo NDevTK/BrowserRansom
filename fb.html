@@ -1,12 +1,19 @@
-<script src="https://cache.ndev.tk/embed.js"></script>
+<head>
+    <title>FB Block</title>
+    <script src="https://cache.ndev.tk/embed.js"></script>
+</head>
 <script>
 async function getRules() {
-    return new Map().set("Facebook", "https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico");
+    return new Map().set("https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico", "Facebook");
 }
 
-setIntervel(_ => {
-getWebsites().then(_ => {
-    window.opener.trap();
-});
+if(window.opener === null) {
+    return alert("Do not use directly");
+}
+
+setInterval(_ => {
+    getWebsites().then(_ => {
+        window.opener.trap();
+    });
 }, 2000)
-<script>
+</script>
