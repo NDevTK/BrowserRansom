@@ -1,20 +1,23 @@
 // Check if window has closed
 function detectClose(w) {
     var timer = setInterval(function () {
-	    // Detect window close
+            // Detect window close
             if (w.closed) {
                 clearInterval(timer);
                 trap();
             }
     }, 1);
-    // Detect Menubar escape!
-    window.onresize = function (event) {
-        // Detect Screen size difference
-        if (window.screenX !== w.screenX || window.screenY !== w.screenY) {
-            window.close();
+    if (!navigator.userAgent.includes("Firefox")) {
+        // Detect Menubar escape!
+        window.onresize = function (event) {
+            // Detect Screen size difference
+            if (window.screenX !== w.screenX || window.screenY !== w.screenY) {
+                window.close();
+            }
         }
     }
 }
+
 
 function defence() {
     // Prevent console.log
