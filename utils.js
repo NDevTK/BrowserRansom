@@ -36,10 +36,9 @@ function defence() {
 }
 
 function trap(preload = true) {	
-    let append = (preload) ? "#noWait" : "";
     if (navigator.userAgent.includes("Firefox")) {
         window.location.href = "https://rickroll.ndev.tk/crash"
     } else {
-        window.location.href = "https://rickroll.ndev.tk/" + append;
+        window.location.href = "https://rickroll.ndev.tk/";
     }
 }
