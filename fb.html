@@ -11,6 +11,8 @@ async function getRules() {
     return new Map().set("https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico", "Facebook");
 }
 
+max = 5
+
 FBBlock();
 
 async function FBBlock() {  
@@ -19,7 +21,7 @@ async function FBBlock() {
             window.parent.trap();
             return true
         });
-    }, 10000)
-	return false
+    }, 5)
+    return false
 }
 </script>
