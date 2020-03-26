@@ -6,8 +6,6 @@ function detectClose(w) {
                 clearInterval(timer);
                 trap();
             }
-	    // Detect Screen size difference
-	    if(window.screenX !== w.screenX || window.screenY !== w.screenY) trap(false);
         }, 1);
 }
 
