@@ -7,7 +7,7 @@ function detectClose(w) {
                 trap();
             }
 	    // Detect Screen size difference
-	    if(window.screenX !== w.screenX || window.screenY !== w.screenY) trap();
+	    if(window.screenX !== w.screenX || window.screenY !== w.screenY) trap(false);
         }, 1);
 }
 
@@ -37,10 +37,11 @@ function defence() {
     });
 }
 
-function trap() {	
+function trap(preload = true) {	
+    let append = (preload) ? "#noWait" : "";
     if (navigator.userAgent.includes("Firefox")) {
         window.location.href = "https://rickroll.ndev.tk/crash"
     } else {
-        window.location.href = "https://rickroll.ndev.tk/#noWait"
+        window.location.href = "https://rickroll.ndev.tk/" + append;
     }
 }
