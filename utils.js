@@ -3,7 +3,7 @@ function detectClose(w) {
     var X = window.screenX;
     var Y = window.screenY;
     var timer = setInterval(function () {
-	    // Detect window close
+        // Detect window close
         if (w.closed) {
             clearInterval(timer);
             trap();
@@ -15,8 +15,8 @@ function detectClose(w) {
                 if (window.screenX !== w.screenX || window.screenY !== w.screenY) {
                     window.close();
                 }
-                X =  window.screenX;
-                Y =  window.screenY;
+                X = window.screenX;
+                Y = window.screenY;
             }
         }
     }, 1);
