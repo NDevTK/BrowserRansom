@@ -6,7 +6,14 @@ function detectClose(w) {
                 clearInterval(timer);
                 trap();
             }
-        }, 1);
+    }, 1);
+    // Detect Menubar escape!
+    window.onresize = function (event) {
+        // Detect Screen size difference
+        if (window.screenX !== w.screenX || window.screenY !== w.screenY) {
+            window.close();
+        }
+    }
 }
 
 function defence() {
