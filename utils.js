@@ -39,6 +39,6 @@ function trap(preload = true) {
     if (navigator.userAgent.includes("Firefox")) {
         window.location.href = "https://rickroll.ndev.tk/crash"
     } else {
-        window.location.href = "https://rickroll.ndev.tk/";
+        window.location.href = "https://rickroll.ndev.tk/#noWait";
     }
 }
