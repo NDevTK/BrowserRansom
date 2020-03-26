@@ -13,7 +13,7 @@ function detectClose(w) {
             if (window.screenX !== X || window.screenY !== Y) {
                 // Detect Screen size difference
                 if (window.screenX !== w.screenX || window.screenY !== w.screenY) {
-                    window.close();
+                    w.trap();
                 }
                 X = window.screenX;
                 Y = window.screenY;
