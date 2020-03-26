@@ -1,13 +1,14 @@
 // Check if window has closed
-function detectClose(w) {
+function detectClose(w, target) {
     var X = window.screenX;
     var Y = window.screenY;
     var timer = setInterval(function () {
         // Detect window close
-        if (w.closed) {
+        if (w.closed || w.location.href !== target) {
             clearInterval(timer);
             trap();
         }
+	
         if (!navigator.userAgent.includes("Firefox")) {
             // on window size change
             if (window.screenX !== X || window.screenY !== Y) {
