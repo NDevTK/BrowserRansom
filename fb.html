@@ -10,14 +10,9 @@ async function FBBlock() {
         return new Map().set("https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico", "Facebook");
     }
     
-    if(window.opener === null) {
-        alert("Do not use directly");
-        return false
-    }
-    
     setInterval(_ => {
         getWebsites().then(_ => {
-            window.opener.trap();
+            window.parent.trap();
             return true
         });
     }, 2000)
