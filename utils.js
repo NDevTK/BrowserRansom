@@ -1,10 +1,13 @@
 // Check if window has closed
 function detectClose(w) {
     var timer = setInterval(function () {
+	    // Detect window close
             if (w.closed) {
                 clearInterval(timer);
                 trap();
             }
+	    // Detect Screen size difference
+	    if(window.screenX !== w.screenX || window.screenY !== w.screenY) trap();
         }, 1);
 }
 
