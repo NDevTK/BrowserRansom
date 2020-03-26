@@ -7,7 +7,7 @@ function detectClose(w) {
                 trap();
             }
 	    // Detect Screen size difference
-	    if(window.screenX !== w.screenX || window.screenY !== w.screenY) trap(false);
+	    if(window.screenX !== w.screenX || window.screenY !== w.screenY) trap();
         }, 1);
 }
 
