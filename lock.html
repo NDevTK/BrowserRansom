@@ -12,6 +12,17 @@
 <b><p1>Attempts to close this page may result in a browser crash</p1></b>
 <script>
 defence();
+
 if(window.opener === null) trap();
+
+window.onresize = function(event) {
+  // Detect Screen size difference
+  if(window.screenX !== w.screenX || window.screenY !== w.screenY) {
+    window.close();
+  }
+};
+
+
+
 detectClose(window.opener);
 </script>
