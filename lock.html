@@ -15,15 +15,5 @@
 defence();
 // Should never be run directly
 if (window.opener === null) trap();
-
-if (!navigator.userAgent.includes("Firefox")) {
-    setInterval(function () {
-            // Detect Screen size difference
-            if (window.screenX !== window.opener.screenX || window.opener.screenY !== window.opener.screenY) {
-                window.close();
-            }
-    }, 1);
-};
-
 detectClose(window.opener);
 </script>
