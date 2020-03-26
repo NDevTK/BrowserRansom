@@ -9,6 +9,7 @@ async function FBBlock() {
     async function getRules() {
         return new Map().set("https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico", "Facebook");
     }
+    
     if(window.opener === null) {
         alert("Do not use directly");
         return false
