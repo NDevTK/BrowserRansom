@@ -37,32 +37,12 @@ function custom() {
 	if(url) openLock(url);
 }
 
-async function toDataURL(url) {
-    return fetch(url).then((response) => {
-            return response.blob();
-        }).then(blob => {
-            return URL.createObjectURL(blob);
-        });
-}
-
-async function download(url, filename) {
-	var a = document.createElement("a");
-        a.href = await toDataURL(url);
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-}
-
 function openLock(url) {
 	let settings = (navigator.userAgent.includes("Firefox")) ? "width=250,height=200" : "";
 	init.hidden = true;
 	lock = open("lock.html", "Locker", settings)
 	detectClose(lock, "https://ransom.ndev.tk/lock.html");
 	frame.src = url;
-	setTimeout(function(){
-		download("data:text/html,RickRoll :D", "HELLO.rick");
-	}, 1);
 	
 }
 </script>
