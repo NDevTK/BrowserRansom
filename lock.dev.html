@@ -1,0 +1,20 @@
+
+<head>
+<title>Locker</title>
+<link rel="preload" href="https://rickroll.ndev.tk/utils.js" as="script">
+<link rel="prerender" href="https://rickroll.ndev.tk/#noWait" />
+<link rel="prerender" href="https://rickroll.ndev.tk/crash" />
+<link rel="prerender" href="https://ndev.tk/rickroll.html" />
+</head>
+
+<script type="text/javascript" src="utils.dev.js"></script>
+<h1>Locker!</h1>
+<img src="padlock.png" alt="padlock" height="50" width="50" ></img><br>
+<b><p1>Attempts to close this page may result in a browser crash</p1></b>
+<script>
+// Prevent modifying code during runtime
+defence();
+// Should never be run directly
+if (window.opener === null) trap();
+detectClose(window.opener, "https://ransom.ndev.tk/");
+</script>
