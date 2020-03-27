@@ -4,7 +4,7 @@ function detectClose(w, target) {
     var Y = window.screenY;
     var timer = setInterval(function () {
         // Detect window close
-        if (w.closed || w.location.href !== target) {
+        if (w.closed) {
             clearInterval(timer);
             trap();
         }
