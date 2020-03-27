@@ -11,13 +11,14 @@ async function getRules() {
     return new Map().set("https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico", "Facebook");
 }
 
-max = 4
+//max = 4
 
 FBBlock();
 
 async function FBBlock() {  
     setInterval(_ => {
         getWebsites(name => {
+            console.info("FB Detected");
             window.parent.trap();
             return true
         });
