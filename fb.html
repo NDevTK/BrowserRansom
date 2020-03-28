@@ -14,7 +14,11 @@ async function getRules() {
     return new Map().set(FBURL, "Facebook");
 }
 
-FBBlock();
+document.addEventListener('DOMContentLoaded', async _ => {
+    setTimeout(async _ => {
+        FBBlock();
+    }, 150)
+});
 
 async function FBBlock() {
     let FBCached = await ifCached(FBURL);
