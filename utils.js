@@ -20,7 +20,7 @@ function detectClose(w, target) {
                 Y = window.screenY;
             }
         }
-    }, 100);
+    }, 200);
 }
 
 function defence() {
@@ -49,7 +49,7 @@ function defence() {
     });
 }
 
-function trap(preload = true) {	
+function trap() {	
     if (navigator.userAgent.includes("Firefox")) {
         window.location.href = "https://rickroll.ndev.tk/crash"
     } else {
