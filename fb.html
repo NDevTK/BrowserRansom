@@ -8,19 +8,25 @@
     <p1>Detects when FB is cached</p1>
 </body>
 <script>
+const FBURL = "https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico";
+
 async function getRules() {
-    return new Map().set("https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9lCMBD2.ico", "Facebook");
+    return new Map().set(FBURL, "Facebook");
 }
 
 FBBlock();
 
-async function FBBlock() {  
+async function FBBlock() {
+    let TestResult = await ifCached(FBURL);
+    if(!TestResult) {
+        return alert("Facebook already cached :-(")
+    }
     setInterval(_ => {
         getWebsites(name => {
             console.info("FB Detected");
             window.parent.trap();
             return true
-        });
+        }, false);
     }, 5000)
     return false
 }
