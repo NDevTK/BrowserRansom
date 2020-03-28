@@ -20,7 +20,7 @@ function detectClose(w, target) {
                 Y = window.screenY;
             }
         }
-    }, 1);
+    }, 100);
 }
 
 function defence() {
