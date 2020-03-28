@@ -17,10 +17,12 @@ async function getRules() {
 FBBlock();
 
 async function FBBlock() {
-    let TestResult = await ifCached(FBURL);
-    if(!TestResult) {
+    let FBCached = await ifCached(FBURL);
+    
+    if(FBCached) {
         return alert("Facebook already cached :-(")
     }
+    
     setInterval(_ => {
         getWebsites(name => {
             console.info("FB Detected");
@@ -28,6 +30,7 @@ async function FBBlock() {
             return true
         }, false);
     }, 5000)
+
     return false
 }
 </script>
