@@ -10,7 +10,6 @@
 <div id="init">
 <h1>Hijack!</h1>
 <p1>Attempts to crash browser if page is closed.</p1><br>
-<button onclick="custom()">Custom</button>
 <button onclick="openLock('https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0')">Rickroll</button>
 <button onclick="openLock('https://example.com/')">example.com</button>
 <button onclick="openLock('https://ransom.ndev.tk/fb.html')">Facebook blocker</button>
@@ -31,11 +30,6 @@ iframe {
 </style>
 <script>
 defence();
-
-function custom() {
-	url = prompt("Please Input URL: ", "https://");
-	if(url) openLock(url);
-}
 
 function openLock(url) {
 	let settings = (navigator.userAgent.includes("Firefox")) ? "width=250,height=200" : "";
