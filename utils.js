@@ -7,7 +7,6 @@ function detectClose(w, target) {
 	try {
 	   if (w.location.href !== target || w.closed) throw 'Cant verify window';
 	} catch {
-	   clearInterval(timer);
 	   trap();
 	}
 	
