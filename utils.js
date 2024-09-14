@@ -22,7 +22,6 @@ function detectClose(w, target) {
             }
         }
     }, 200);
-    w.addEventListener('pagehide', trap);
 }
 
 function defence() {
@@ -35,12 +34,9 @@ function defence() {
     // Prevent Typing
     document.addEventListener('keypress', event => event.preventDefault());
     // Detect DevTools
-    var done = false;
     var element = new Image();
     Object.defineProperty(element, 'id', {
         get: function () {
-            if (done) return
-            done = true;
             trap();
         }
     });
