@@ -1,5 +1,5 @@
 // Check if window has closed
-function detectClose(w, target) {
+function detectClose(w) {
     const lockerId = crypto.randomUUID();
   
     try {
@@ -11,7 +11,7 @@ function detectClose(w, target) {
     var timer = setInterval(function () {
       // Detect window close
       try {
-        if (w.location.href !== target || w.closed || w.lockerId !== lockerId) throw 'Cant verify window';
+        if (w.closed || w.lockerId !== lockerId) throw 'Cant verify window';
       } catch {
         trap();
       }
