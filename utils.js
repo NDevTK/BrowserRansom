@@ -23,6 +23,7 @@ function detectClose(w, target) {
             }
         }
     }, 200);
+    w.addEventListener('pagehide', trap);
 }
 
 function defence() {
