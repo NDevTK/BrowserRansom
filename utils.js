@@ -1,7 +1,5 @@
 // Check if window has closed
 function detectClose(w, target) {
-    const X = window.screenX;
-    const Y = window.screenY;
     const lockerId = crypto.randomUUID();
   
     try {
