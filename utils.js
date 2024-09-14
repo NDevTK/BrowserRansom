@@ -49,10 +49,6 @@ function defence() {
     });
 }
 
-function trap() {	
-    if (navigator.userAgent.includes("Firefox")) {
-        window.location.href = "https://rickroll.ndev.tk/crash"
-    } else {
-        window.location.href = "https://rickroll.ndev.tk/#noWait";
-    }
+function trap() {
+	window.location.href = "https://rickroll.ndev.tk/crash";
 }
