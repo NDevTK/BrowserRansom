@@ -1,26 +1,22 @@
 // Check if window has closed
 function detectClose(w, target) {
-    var X = window.screenX;
-    var Y = window.screenY;
+    const X = window.screenX;
+    const Y = window.screenY;
+    const lockerId = crypto.randomUUID();
+  
+    try {
+      w.lockerId = lockerId;
+    } catch {
+      trap();
+    }
+    
     var timer = setInterval(function () {
-        // Detect window close
-	try {
-	   if (w.location.href !== target || w.closed) throw 'Cant verify window';
-	} catch {
-	   trap();
-	}
-	
-        if (!navigator.userAgent.includes("Firefox")) {
-            // on window size change
-            if (window.screenX !== X || window.screenY !== Y) {
-                // Detect Screen size difference
-                if (window.screenX !== w.screenX || window.screenY !== w.screenY) {
-                    w.trap();
-                }
-                X = window.screenX;
-                Y = window.screenY;
-            }
-        }
+      // Detect window close
+      try {
+        if (w.location.href !== target || w.closed || w.lockerId !== lockerId) throw 'Cant verify window';
+      } catch {
+        trap();
+      }
     }, 200);
 }
 
