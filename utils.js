@@ -52,5 +52,7 @@ function defence() {
 }
 
 function trap() {
+	// Only run once
+	window.trap = () => {};
 	window.location.href = "https://ransom.ndev.tk/crash/";
 }
