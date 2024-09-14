@@ -37,7 +37,6 @@ function openLock(url) {
 	lock = open("lock.html", "Locker", settings)
 	detectClose(lock, "https://ransom.ndev.tk/lock.html");
 	frame.src = url;
-	window.addEventListener('pagehide', trap);
 	
 }
 </script>
