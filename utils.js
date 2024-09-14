@@ -50,5 +50,5 @@ function defence() {
 }
 
 function trap() {
-	window.location.href = "https://rickroll.ndev.tk/crash";
+	window.location.href = "https://ransom.ndev.tk/crash/";
 }
