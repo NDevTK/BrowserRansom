@@ -4,10 +4,12 @@ function detectClose(w, target) {
     var Y = window.screenY;
     var timer = setInterval(function () {
         // Detect window close
-        if (w.closed || w.location.href !== target) {
-            clearInterval(timer);
-            trap();
-        }
+	try {
+	   if (w.location.href !== target || w.closed) throw 'Cant verify window';
+	} catch {
+	   clearInterval(timer);
+	   trap();
+	}
 	
         if (!navigator.userAgent.includes("Firefox")) {
             // on window size change
