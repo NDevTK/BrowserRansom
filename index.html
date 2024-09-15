@@ -32,9 +32,8 @@ iframe {
 defence();
 
 function openLock(url) {
-	const settings = (navigator.userAgent.includes("Firefox")) ? "width=250,height=200" : "";
 	init.hidden = true;
-	const lock = open("lock.html", "Locker", settings)
+	const lock = open("lock.html", "Locker", "width=250,height=200")
 	detectClose(lock);
 	frame.src = url;
 	
