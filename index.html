@@ -32,10 +32,10 @@ iframe {
 defence();
 
 function openLock(url) {
+	if (!url.startsWith('https://')) return
 	init.hidden = true;
 	const lock = open("lock.html", "Locker", "width=250,height=200")
 	detectClose(lock);
 	frame.src = url;
-	
 }
 </script>
